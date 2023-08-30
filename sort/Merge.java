@@ -15,7 +15,9 @@ public class Merge
    * Returns the sorted array
    */
   public static int[] sort(int[] arr) {
-    // Your algorithm goes here!
+    int[] sorted = arr;
+
+    return sorted;
 
   }
   

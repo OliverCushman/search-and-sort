@@ -15,7 +15,26 @@ public class Insertion
    * Returns the sorted array
    */
   public static int[] sort(int[] arr) {
-    // Your algorithm goes here!
+    int[] sorted = arr;
+    int n = sorted.length;
+    int j;
+    int temp;
+    int k;
+    for (int i = 0; i < n; i++) {
+      j = i - 1;
+      while (j >= 0 && sorted[i] < sorted[j]) {
+        j--;
+      }
+      temp = sorted[i];
+      k = i;
+      while (k > j + 1) {
+        sorted[k] = sorted[k - 1];
+        k--;
+      }
+      sorted[k] = temp;
+    }
+
+    return sorted;
 
   }
   
