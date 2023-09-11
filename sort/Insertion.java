@@ -15,26 +15,29 @@ public class Insertion
    * Returns the sorted array
    */
   public static int[] sort(int[] arr) {
-    int[] sorted = arr;
-    int n = sorted.length;
+    int n = arr.length;
     int j;
     int temp;
     int k;
     for (int i = 0; i < n; i++) {
       j = i - 1;
-      while (j >= 0 && sorted[i] < sorted[j]) {
+      // Compare every value to the left of i to the value at i
+      // If the value is less than the value at i, stop
+      while (j >= 0 && arr[i] < arr[j]) {
         j--;
       }
-      temp = sorted[i];
+      temp = arr[i];
       k = i;
+      // Move every value to the left of i forward to make room for the value at i
       while (k > j + 1) {
-        sorted[k] = sorted[k - 1];
+        arr[k] = arr[k - 1];
         k--;
       }
-      sorted[k] = temp;
+      // Insert the value that was at i into the available index at k
+      arr[k] = temp;
     }
 
-    return sorted;
+    return arr;
 
   }
   

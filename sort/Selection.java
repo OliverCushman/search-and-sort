@@ -15,19 +15,19 @@ public class Selection
    * Returns the sorted array
    */
   public static int[] sort(int[] arr) {
-    int[] sorted = arr;
-    int n = sorted.length;
+    int n = arr.length;
     int temp;
     for (int i = 0; i < n; i++) {
+      // For every value of i, find the lowest value to the right and swap it with the value at i
       for (int j = i + 1; j < n; j++) {
-        if (sorted[j] < sorted[i]) {
-          temp = sorted[j];
-          sorted[j] = sorted[i];
-          sorted[i] = temp;
+        if (arr[j] < arr[i]) {
+          temp = arr[j];
+          arr[j] = arr[i];
+          arr[i] = temp;
         }
       }
     }
-    return sorted;
+    return arr;
   }
   
   public static void main(String[] args) {

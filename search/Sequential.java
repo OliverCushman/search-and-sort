@@ -14,8 +14,13 @@ public class Sequential
    * Returns the index of the target value, or -1 if not found
    */
   public static int search(int[] arr, int target) {
-    // Your algorithm goes here!
-    
+    // Check each value in array against target, if there is no equal value return -1
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[i] == target) {
+        return i;
+      }
+    }
+    return -1;
   }
   
   public static void main(String[] args) {
